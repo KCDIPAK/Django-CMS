@@ -1,0 +1,75 @@
+{% load static %}
+
+<nav class="navbar bg-body-tertiary vh-200" style="width: 180px;">
+  <div class="d-flex flex-column align-items-start justify-content-start h-100 p-3">
+    <ul class="navbar-nav w-100">
+        <div class="profile_image">
+            <img src="{% static 'images/profile.webp' %}" style="height: 50px; width: 50px; margin-left: 50px">
+        </div>
+         <li class="nav-item" style="margin-left: 25px">
+        <a class="nav-link "  href=""> User Name</a>
+      </li>
+        <hr>
+      <li class="nav-item">
+        <a class="nav-link "  href="{% url 'hod_home' %}"><i class="fa-solid fa-house"></i> Dashboard</a>
+      </li>
+      <hr>
+        <li class="nav-item">
+        <a class="nav-link "  href="{% url 'manage_staff_view' %}"><i class="fa-sharp fa-solid fa-people-roof"></i> Manage Staff</a>
+      </li>
+
+        <hr>
+        <li class="nav-item">
+        <a class="nav-link "  href="#"><i class="fa-sharp fa-solid fa-people-roof"></i> Manage Students</a>
+      </li>
+
+        <hr>
+        <li class="nav-item">
+        <a class="nav-link "  href="{% url 'manage_course_view' %}"><i class="fa-solid fa-book"></i> Manage Course</a>
+      </li>
+
+        <hr>
+        <li class="nav-item">
+        <a class="nav-link "  href=" {% url 'manage_subject_view' %} "><i class="fa-solid fa-file"></i> Manage Subject</a>
+      </li>
+
+        <hr>
+        <li class="nav-item">
+        <a class="nav-link "  href=""><i class="fa-solid fa-calendar-days"></i> View Attendance</a>
+      </li>
+      <hr>
+        <li class="nav-item">
+        <a class="nav-link "  href=""><i class="fa-solid fa-comments"></i> Staff Feedback</a>
+      </li>
+
+        <li class="nav-item">
+        <a class="nav-link "  href=""><i class="fa-solid fa-comments"></i> Student Feedback</a>
+      </li>
+        <hr>
+        <li class="nav-item">
+        <a class="nav-link "  href=""><i class="fa-solid fa-clipboard"></i> Student Leave</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link "  href=""><i class="fa-solid fa-clipboard"></i> Staff Leave</a>
+      </li>
+      <hr>
+      {% if user.is_authenticated %}
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+            <a class="nav-link "  href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        </li>
+    </ul>
+{% else %}
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/register">Register</a>
+        </li>
+    </ul>
+{% endif %}
+
+    </ul>
+  </div>
+</nav>

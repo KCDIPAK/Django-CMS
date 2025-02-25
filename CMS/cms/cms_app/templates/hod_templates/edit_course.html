@@ -1,0 +1,46 @@
+{% extends 'hod_templates/hod_base.html' %}
+
+
+{% block content %}
+
+{% include 'hod_templates/hod_top_bar.html' %}
+
+<div class="card">
+  <h5 class="card-header">Add Course</h5>
+  <div class="card-body">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="form-group">
+            <label>Course Name</label>
+            {{form.course_name}}
+        </div>
+            <button type="submit" class="btn btn-primary" disabled>Submit</button>
+        </form>
+  </div>
+</div>
+<br>
+<div class="card">
+  <h5 class="card-header">Course Details</h5>
+  <div class="card-body">
+    <table class="table">
+  <tbody>
+    <tr>
+        <td>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form}}
+                <td>
+                     <input type="submit" class="btn btn-sm btn-success" name="Save">
+                <a class="btn btn-sm btn-primary" href="{%url 'manage_course_view' %}">Cancel</a>
+                </td>
+
+            </form>
+        </td>
+    </tr>
+
+
+  </tbody>
+</table>
+  </div>
+</div>
+{% endblock %}

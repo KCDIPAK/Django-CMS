@@ -1,0 +1,49 @@
+{% extends 'hod_templates/hod_base.html' %}
+{% block title %}
+    Add Staff
+{% endblock %}
+{% block content %}
+
+
+<div class="container mt-4">
+
+    <form method="POST" action="">
+        {% csrf_token %}
+      <div class="d-flex flex-inputs">
+        <div class="mb-3">
+          <label class="form-label">First Name</label>
+          {{form.first_name}}
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Last Name</label><br>
+          {{form.last_name}}
+        </div>
+      </div>
+ <div class="mb-3">
+          <label class="form-label">User Name</label><br>
+          {{form.username}}
+        </div>
+
+          <div class="mb-3">
+          <label class="form-label">User Type</label><br>
+          {{form.user_type}}
+        </div>
+
+          <div class="mb-3">
+          <label class="form-label">Email</label><br>
+          {{form.email}}
+        </div>
+
+       <div class="input-group mb-2">
+           <div class="input-group-append">
+               <span class="input-group-text">Password<i class="fas fa-key"></i></span>
+           </div>
+            {{ form.password}}
+       </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+
+{% endblock %}

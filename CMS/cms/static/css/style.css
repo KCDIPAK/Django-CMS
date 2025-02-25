@@ -1,0 +1,25 @@
+.custom-shadow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 350px;
+      padding: 30px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      background-color: #e8e5e5;
+      border-radius: 10px;
+}
+.flex-inputs .mb-3 {
+      flex: 1;
+      margin-right: 10px;
+}
+.flex-inputs .mb-3:last-child {
+      margin-right: 0;
+}
+.content{
+      display: flex;
+}
+
+
+

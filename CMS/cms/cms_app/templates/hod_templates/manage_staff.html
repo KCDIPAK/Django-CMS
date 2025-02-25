@@ -1,0 +1,49 @@
+{% extends 'hod_templates/hod_base.html' %}
+{% block title %}
+    Manage Staff
+{% endblock %}
+
+
+{% block content %}
+{% include 'hod_templates/hod_top_bar.html' %}
+
+<div class="card">
+  <h5 class="card-header">Staffs Details
+    <button class="btn btn-success">
+      <a href="{% url 'add_staff_view' %}" style="text-decoration: none; color: white">
+        Add Staff
+      </a>
+    </button>
+  </h5>
+  <div class="card-body">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">User Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for staff in staffs %}
+    <tr>
+    <th scope="col">{{forloop.counter}}</th>
+      <td>{{staff.first_name}}</td>
+      <td>{{staff.last_name}}</td>
+        <td>{{staff.username}}</td>
+        <td>{{staff.email}}</td>
+      <td>
+          <button type="button" class="btn btn-success"><a href="{% url 'edit_staff' %}" style="color: white"><i class="fa-solid fa-pen-to-square"></i></a></button>
+          <button type="button" class="btn btn-danger"><a href="{% url 'delete_staff' staff.id %}" style="color: white"><i class="fa-solid fa-trash"></i></a></button>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}
